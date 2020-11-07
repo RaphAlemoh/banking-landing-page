@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBank Login</title>
+    <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<script src="https://use.fontawesome.com/4ecc3dbb0b.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <header id="navbar">
+        <nav class="navbar-container container">
+          <a href="/" class="home-link">
+            <div class="navbar-logo"></div>
+            MyBank
+          </a>
+          <button type="button" class="navbar-toggle" aria-label="Open navigation menu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-menu left sidebar">
+            <ul class="navbar-links">
+              <li class="navbar-item"><a class="navbar-link" onclick="setActive(event)" href="#">Home</a></li>
+              <li class="navbar-item"><a class="navbar-link" onclick="setActive(event)" href="#about">About</a></li>
+              <li class="navbar-item"><a class="navbar-link" onclick="setActive(event)" href="#contact">Contact</a></li>
+              <li class="navbar-item"><a class="navbar-link" onclick="setActive(event)" href="#blog">Blog</a></li>
+              <li class="navbar-item"><a class="navbar-link active"  href="login.html">Login</a></li>
+              <li class="navbar-item"><a class="navbar-link"  href="signup.html">Register</a></li>
+            </ul>
+          </div>
+    
+          <div class="request request-hide">
+                <a class="navbar-link" href="/request_invite">Request Invite</a>
+          </div>
+          
+        </nav>
+    </header>
+    
+    <!-- <div class="body-bg-img"></div> -->
+
+    <div class="form-wrapper">
+        <h3>Go back <a href="index.html" class="link">home</a></h3>
+
+        <div class="form-container">
+            <div class="title-container">
+                <h3><b>Login</b></h3>
+                <p>Please login to continue</p>
+            </div>
+        <form action="#" method="POST" onsubmit="return false;" name="signUpForm" id="signup-form">    
+                <div class="row clearfix">
+                    <div class="col-12">
+                        <input type="email" name="email" id="email-login" placeholder="Email" onkeyup="validateLogin()" >
+                    </div>
+                </div>
+    
+                <div class="row clearfix">
+                    <div class="col-12">
+                        <input type="password" name="pword" id="pword-login" placeholder="Password" onkeyup="validateLogin()">
+                    </div>
+                </div>
+    
+    
+                <div class="row clearfix">
+                    <div class="col-6">
+                        <img id="loader" style="display: none;" class="loader" src="ajax-loader.gif" alt="loading" width="20px" height="20px" >
+                        <input type="submit" value="Login"  id="login" disabled>
+                    </div>
+                </div>
+        </form>        
+        
+    
+        <div class="row clearfix">
+            <div class="col-12">
+        <div class="form-footer">
+            <div class="text-center">
+                <h5>Don't have an account? <span class="underline"><a href="/signup.html">here</a></span></h5>
+            </div>
+        </div>                  
+            </div>
+          
+        </div>
+
+
+    </div>
+</div>
+</body>
+<script src="main.js"></script>
+</html>

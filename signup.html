@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+<!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<script src="https://use.fontawesome.com/4ecc3dbb0b.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <header id="navbar">
+        <nav class="navbar-container container">
+          <a href="/" class="home-link">
+            <div class="navbar-logo"></div>
+            MyBank
+          </a>
+          <button type="button" class="navbar-toggle" aria-label="Open navigation menu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-menu left sidebar">
+            <ul class="navbar-links">
+              <li class="navbar-item"><a class="navbar-link" onclick="setActive(event)" href="#">Home</a></li>
+              <li class="navbar-item"><a class="navbar-link" onclick="setActive(event)" href="#about">About</a></li>
+              <li class="navbar-item"><a class="navbar-link" onclick="setActive(event)" href="#contact">Contact</a></li>
+              <li class="navbar-item"><a class="navbar-link" onclick="setActive(event)" href="#blog">Blog</a></li>
+              <li class="navbar-item"><a class="navbar-link"  href="login.html">Login</a></li>
+              <li class="navbar-item"><a class="navbar-link active"  href="signup.html">Register</a></li>
+            </ul>
+          </div>
+    
+          <div class="request request-hide">
+                <a class="navbar-link" href="/request_invite">Request Invite</a>
+          </div>
+          
+        </nav>
+    </header>
+    
+    <div class="form-wrapper">
+        <h3>Go back <a href="index.html" class="link">home</a></h3>
+
+        <div class="form-container">
+        <div class="title-container">
+            <h2><b>Sign Up</b></h2>
+            <p>Please fill in the form to create an account</p>
+          </div>
+
+    <form action="#" method="POST" onsubmit="return false;" name="signUpForm" id="signup-form">
+            <div class="row clearfix">
+                <div class="col-6">
+                    <label>First name</label>
+                    <div class="input-field"> 
+                        <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                        <input type="text" name="first_name" class="" id="first-name" placeholder="First Name" onkeyup="validateAlphabet('first-name', 'first-name-error')">
+                    </div>   
+                    <span id="first-name-error" class="input-error"> </span>
+                </div>
+
+                <div class="col-6">
+                    <label>Last name</label>
+                    <div class="input-field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                        <input type="text" name="last_name" id="last-name" placeholder="Last Name" onkeyup="validateAlphabet('last-name', 'last-name-error')">
+                        <input type="hidden" name="">
+                    </div> 
+                    <span id="last-name-error" class="input-error"> </span>   
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-12">
+                <label>Email</label>
+                <div class="input-field"> <span><i aria-hidden="true" class="fa fa-mail"></i></span>
+                    <input type="email" name="email" id="email" placeholder="Email" onkeyup="validateEmail('email', 'email-error')">
+                </div> 
+                <span id="email-error" class="input-error"> </span>   
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-12">
+                    <label>Password</label>
+                    <div class="input-field"> <span><i aria-hidden="true" class="fa fa-user-secret"></i></span>
+                    <input type="password" name="pword" id="pword" placeholder="Password" onkeyup="chkPasswordLength('pword', 'password-error')">
+                    </div>
+                    <span id="password-error"  class="input-error"> </span>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-12">
+                    <label>Confirm Password</label>
+                    <div class="input-field"> <span><i aria-hidden="true" class="fa fa-user-secret"></i></span>
+                    <input type="password" name="cword" id="cword" placeholder="Confirm Password" onkeyup="chkPasswordMatch('cword', 'cpassword-error')">
+                    </div>
+                    <span id="cpassword-error"  class="input-error"> </span>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <div class="col-12">
+                    <input type="checkbox" name="accept" id="accept">
+                    I accept the <span class="form-terms">Terms of Use & Privacy Policy</span>
+                </div>
+            </div>
+
+            <input type="hidden" id="validate-counter" value="0">
+
+            <div class="row clearfix">
+                <div class="col-6">
+                   <img id="loader" style="display: none;" class="loader" src="ajax-loader.gif" alt="loading" width="20px" height="20px" >
+                    <input type="submit" value="Sign Up" id="sign-up" disabled
+                    name="submit" onclick="handleFormSubmit()">
+                </div>
+            </div>
+    </form>        
+
+    <div class="form-footer">
+        <div class="text-center">
+            <h4>Already have an account? <span class="underline"><a href="/login.html">Login here</a></span></h4>
+        </div>
+    </div>
+
+    </div>
+</div>
+</body>
+<script src="main.js"></script>
+</html>
