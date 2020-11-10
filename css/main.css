@@ -10,7 +10,6 @@
     --neutral-color-lighter-gray:hsl(0, 0%, 94%);
     --neutral-color-white: hsl(0, 0%, 100%);
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,6 +29,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 #navbar {
     --navbar-height: 60px;
     position: fixed;
@@ -130,7 +130,6 @@ body {
     opacity: 0;
     visibility: hidden;
 }
-
 .navbar-menu.detached{
     left: 0;
     right: 0;
@@ -140,7 +139,6 @@ body {
     opacity: 3.9;
     visibility: visible;
 }
-
 .navbar-links {
     list-style-type: none;
     max-height: 0;
@@ -155,16 +153,13 @@ body {
     padding: 1em;
     max-height: none;
 }
-
 .detached .navbar-links {
     left: 0;
     right: 0;
     margin: 1.4rem;
     border-radius: 5px;
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); */
     box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.3);
 }
-
 .navbar-item {
     margin: 0.4em;
     width: 100%;
@@ -178,10 +173,12 @@ body {
     top: -70px;
     visibility: hidden;
 }
+.jumbroton-wrapper, .blog-wrapper{
+    background-color: var(--neutral-color-light-gray);
+}
 .jumbotron{
     display: flex;
     justify-content: space-between;
-    background-color: var(--neutral-color-light-gray);
     flex-direction: column;
     height: 450px;
     width: auto;
@@ -206,7 +203,12 @@ body {
     text-align: center;
 }
 
-
+.about-wrapper{
+    background-color: var(--neutral-color-lighter-gray);
+}
+.footer-wrapper{
+    background-color: var(--primary-color-dark-blue);
+}
 @media screen and (min-width: 375px) {
     .navbar-toggle {
     display: none;
@@ -243,6 +245,9 @@ body {
     .jumbroton-request-btn{
     padding-top: 2px;
     width: 40%;
+    }
+    .request:hover{
+        color: var(--primary-color-lime-green);
     }
     .request-hide{
     display: block;
@@ -284,7 +289,6 @@ body {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: var(--neutral-color-lighter-gray);
     }
     .why-mybank{
         margin-top: 10px;
@@ -301,13 +305,9 @@ body {
         flex-direction: column;
         padding: 5px;
     }
-    .card-icon{
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color-lime-green);
-    align-self: left;
-    margin-bottom: 5px;
+    .card-icon .fa{
+        margin-bottom: 5px;
+        width: 50px;
     }
     .card-header{
     color: var(--primary-color-dark-blue);
@@ -319,7 +319,6 @@ body {
     .mybank-blog{
     display: flex;
     flex-direction: column;
-    background-color: var(--neutral-color-light-gray);
     padding-top: 20px;
     }
     .mybank-article-header{
@@ -359,22 +358,62 @@ body {
     }
 
     .footer{
-        background-color: var(--primary-color-dark-blue);
         display: flex;
         justify-content: space-between;
         color: var(--neutral-color-white);
         width: 100%;
+        margin-bottom: 2px;
     }
 
     .footer-left{
-        width: 70%;
+        width: 65%;
     }
 
     .footer-right{
+        width: 35%;
+       padding-top: 12px;
+    }
+
+    .footer-left{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .footer-left .col-4 {
         width: 30%;
-       padding-top: 30px;
+    }
+
+    .footer-links ul{
+        list-style-type: none;
     }
 }
 
-/* - Mobile: 375px
-- Desktop: 1440px */
+
+.footer-logo{
+    color: var(--neutral-color-white);
+}
+
+.ul-social {
+    text-align: left;
+    padding-top: 15px;
+  }
+  .li-social-links {
+    display: inline-block;
+    list-style: none;
+  }
+  .social {
+    font-size: 0.9em;
+    color: var(--neutral-color-white);
+    padding:5px;
+  }
+
+.footer-links a, .social{
+    color: var(--neutral-color-white);
+    text-decoration: none;
+}
+
+.footer-links a:hover, .social:hover{
+   color: var(--primary-color-lime-green);
+}
